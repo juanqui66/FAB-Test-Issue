@@ -5,21 +5,17 @@ import { AlertController, Alert} from 'ionic-angular';
 
 
 @Injectable() export class PublicidadService {
-  public registroRealizado: boolean;
   private admobId: any;
   public bannerDisponible: Promise<any>;
   public interstitialDisponible: Promise<any>;
   public videoDisponible: Promise<any>;
-  public fechaHoraUltimoClickValido: any;
-  public textoTraducido: string[] = ['', '', '', ''];
-  public alerta: Alert;
 
   constructor(public platform: Platform,
               private admob: AdMob,
               public events: Events,
               public alertCtrl: AlertController) {
-    this.registroRealizado = false;
-    this.fechaHoraUltimoClickValido = null;
+
+
   }
 
 
@@ -52,8 +48,7 @@ import { AlertController, Alert} from 'ionic-angular';
     }
 
     this.admob.onAdFailLoad().subscribe(() => {
-      // alert('onAdFailLoad');
-      this.fechaHoraUltimoClickValido = null;
+      console.log("onAdFailLoad");
     });
 
     this.admob.onAdLeaveApp().subscribe((data) => {
