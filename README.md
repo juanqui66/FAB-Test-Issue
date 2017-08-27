@@ -11,7 +11,6 @@ FAB-Test-Issue\src\clases\services\publicidad-service.ts.
 ### Current behavoir:
 
 [Ionic issue](https://github.com/ionic-team/ionic/issues/12746).
-[ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
 
 When using an FAB in the bottom, in a page where we have enabled in the foot an AdMob Pro banner and in that same page, when we enter it (in event ngOnInit) we load an interstitial of AdMob Pro, when closing the interstitial, the FAB is hidden under the banner.
 
