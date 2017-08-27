@@ -8,6 +8,16 @@
 </ion-header>
 
 <ion-content>
+    <ion-fab bottom right>
+        <button ion-fab color="secondary"><ion-icon name="share"></ion-icon></button>
+        <ion-fab-list side="left">
+          <button ion-fab color="secondary" (click)="alerta('facebook')"><ion-icon name="logo-facebook"></ion-icon></button>
+          <button ion-fab color="secondary" (click)="alerta('twitter')"><ion-icon name="logo-twitter"></ion-icon></button>
+          <button ion-fab color="secondary" (click)="alerta('share')"><ion-icon name="share"></ion-icon></button>
+          <button ion-fab color="secondary" (click)="alerta('heart')"><ion-icon name="heart"></ion-icon></button>
+          <button ion-fab color="secondary" (click)="alerta('youtube')"><ion-icon name="logo-youtube"></ion-icon></button>
+        </ion-fab-list>
+      </ion-fab>  
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon [name]="item.icon" item-left></ion-icon>

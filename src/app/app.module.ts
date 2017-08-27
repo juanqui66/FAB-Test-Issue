@@ -9,6 +9,9 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { PublicidadService } from '../clases/servicios/publicidad-service';
+import { AdMob } from '@ionic-native/admob';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,6 +31,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    PublicidadService,
+    AdMob,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+
+import { PublicidadService } from '../../clases/servicios/publicidad-service';
 
 @Component({
   selector: 'page-list',
   templateUrl: 'list.html'
 })
-export class ListPage {
+export class ListPage implements OnInit {
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private publicidad: PublicidadService, public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
@@ -33,5 +35,21 @@ export class ListPage {
     this.navCtrl.push(ListPage, {
       item: item
     });
+  }
+
+  ngOnInit() {
+    try {
+      this.publicidad.preparaBanner()
+      this.publicidad.showBanner("bottom");
+      this.publicidad.preparaInterstitial();
+      this.publicidad.showInterstitial();
+    } catch (err) {
+      console.log(err);
+    }
+
+  }  
+
+  alerta(texto) {
+    alert(texto);
   }
 }
