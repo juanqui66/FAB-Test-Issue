@@ -5,8 +5,11 @@
 
 Example with which reproduces the situation described in the 'current behavoir'
 
-It is based on a sideMenu type app, which has been added banner and interstitial display in the home.html and list.html pages. There is also code in their respective files home.ts and list.ts, in the ngOnInit method, where a service called advertising is used, which is in the file 
-FAB-Test-Issue\src\clases\services\publicidad-service.ts.
+It is based on an App menuSide to which a banner and an interstitial have been added. An FAB has also been added at the bottom of the home.html and list.html pages.
+
+The banner and the interstitial have been added in the ngOnInit method of the home.ts and list.ts files, where an advertising service is called, which is available in FAB-Test-Issue \ src \ classes \ services \ advertising- Service.ts.
+
+Advertising is initialized in the initializeAp() of app.component.ts, calling this.publicidad.inicializaAdmob().
 
 ### Current behavoir:
 
