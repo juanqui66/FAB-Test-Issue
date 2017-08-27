@@ -10,6 +10,8 @@ FAB-Test-Issue\src\clases\services\publicidad-service.ts.
 
 ### Current behavoir:
 
+[Ionic issue] https://github.com/ionic-team/ionic/issues/12746
+
 When using an FAB in the bottom, in a page where we have enabled in the foot an AdMob Pro banner and in that same page, when we enter it (in event ngOnInit) we load an interstitial of AdMob Pro, when closing the interstitial, the FAB is hidden under the banner.
 
 This only happens in IOS. Android works properly and the FAB is above the banner.
