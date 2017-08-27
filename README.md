@@ -1,26 +1,17 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
-## How to use this template
+## FAB & AdMob Pro do not coexist properly
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+*Ejemplo con el que se reproduce la situación descrita en el 'current behavoir'.
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+Example with which reproduces the situation described in the 'current behavoir'
 
-### With the Ionic CLI:
+### Current behavoir:
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+When using an FAB in the bottom, in a page where we have enabled in the foot an AdMob Pro banner and in that same page, when we enter it (in event ngOnInit) we load an interstitial of AdMob Pro, when closing the interstitial, the FAB is hidden under the banner.
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start mySideMenu sidemenu
-```
+This only happens in IOS. Android works properly and the FAB is above the banner.
 
-Then, to run it, cd into `mySideMenu` and run:
+In IOS, in addition to hiding the FAB, the bottom of the page is also covered by the banner. It is as if after showing the interstitial, the size of the page happens to occupy the entire screen space of the mobile, without realizing that at the bottom of it has been loaded a banner.
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+### Expected behavior:
+The FAB should be above the banner, as in the first image.
