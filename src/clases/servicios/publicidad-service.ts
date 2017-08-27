@@ -70,15 +70,6 @@ import { AlertController, Alert} from 'ionic-angular';
   }
 
 
-
-
-  
-
-  public hayQuePonerPublicidad() {
-    return true;
-  }
-
-
   public preparaBanner() {
     if (this.admob) {
       this.bannerDisponible = this.admob.createBanner({
